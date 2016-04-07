@@ -8,7 +8,7 @@ _start:
 	/* initialize stack pointer right below the .text segment, grows toward lower addresses.
 	 * it is at 64MB and should be enough...
 	 */
-	ldr sp, =0x8000
+	ldr sp, =(64 * 1024 * 1024)
 
 	/* call the c startup function, never return :( */
 	b _cstart
