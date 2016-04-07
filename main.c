@@ -4,8 +4,7 @@
 volatile uint *gpio = (uint *) 0x20200000;
 volatile uint tim;
 
-int main(void) __attribute__((naked));
-int main(void)
+int kernel_main(uint r0, uint r1, uint atags)
 {
 	gpio[1] |= (1 << 18);
 	while (1) {

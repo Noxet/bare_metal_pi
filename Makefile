@@ -20,7 +20,7 @@ kernel.img: kernel.elf
 
 kernel.elf: main.c
 #	$(GNUARM)-ld $< -o $@
-	$(GNUARM)-gcc $(CFLAGS) main.c -o kernel.elf
+	$(GNUARM)-gcc $(CFLAGS) main.c start.s cstart.c -o kernel.elf
 
 # copy the kernel to sd card
 install: kernel.img
